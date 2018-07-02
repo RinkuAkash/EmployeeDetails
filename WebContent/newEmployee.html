@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Details</title>
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript">
+	function address(f) {
+		if (f.checkBox.checked == true) {
+			document.getElementById('permanent').value = document
+					.getElementById('current').value;
+		}
+	}
+</script>
+</head>
+<body>
+	<div class="clearfix">
+		<div class="header">
+			<img src="UskCorp.png">
+			<h1>Employee Details</h1>
+		</div>
+	</div>
+	<ul>
+		<li><a href="Index">Home</a></li>
+		<li><a href="New">New</a></li>
+		<li><a href="Update">Update</a></li>
+		<li><a href="Search">Search</a></li>
+		<li class="float"><a href="logout">Logout</a></li>
+	</ul>
+	<div>
+		<form method="POST" action="Updated">
+			<br> <label>Employee Name:</label><input type="text"
+				id="firstName" placeholder="First Name"><input type="text"
+				id="lastName" placeholder="Last Name"><br> <label>Designation:</label>
+			<select id="designation">
+				<option value="SoftwareEngineer">Software Engineer</option>
+				<option value="SeniorSE">Senior Software Engineer</option>
+				<option value="TeamLeader">Team Leader</option>
+				<option value="PersonalAssistant">Personal Assistant</option>
+				<option value="HR">HR/Operation Head</option>
+			</select> <br> <label>Date of Birth</label><input type="date" id="dob">
+			<br> <label>Current Address:</label>
+			<textarea rows="5" name="current" id="current"></textarea>
+			<br> <input type="checkbox" name="checkBox"
+				onClick="address(this.form)">Click here if current address
+			and permanent address is same<br> <br> <label>Permanent
+				Address:</label>
+			<textarea rows="5" name="permanent" id="permanent"></textarea>
+			<br> <label>Phone no:</label><input type="text" id="phn">
+			<br> <label>Alternative Phone no:</label><input type="text"
+				id="aphn"> <br> <label>Email id:</label><input
+				type="text" id="email"><br> <input type="Submit"
+				value="Submit">
+
+		</form>
+	</div>
+</body>
+</html>

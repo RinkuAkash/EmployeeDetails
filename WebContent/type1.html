@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Details</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="clearfix">
+<div class="header">
+<img src="UskCorp.png" >
+<h1>Employee Details</h1>
+</div>
+</div>
+<ul>
+<li><a href="Index">Home</a></li>
+<li><a href="New">New</a></li>
+<li><a href="Update">Update</a></li>
+<li><a href="Search">Search</a></li>
+<li class="float"><a href="logout" >Logout</a></li>
+</ul>
+<div>
+<form method="POST" action="Updated"> 
+<br><label>Employee Name:<input type="text" id="firstName" placeholder="First Name"><input type="text" id="lastName" placeholder="Last Name"></label>
+<br><label>Designation:</label><select id="designation"><option value="SoftwareEngineer">Software Engineer</option><option value="SeniorSE">Senior Software Engineer</option><option value="TeamLeader">Team Leader</option><option value="PersonalAssistant">Personal Assistant</option><option value="HR">HR/Operation Head</option></select>
+<br><label>Date of Birth<input type="date" id="dob"></label>
+<br><label>Current Address:<textarea rows="5"></textarea></label>
+<br><label>Permanent Address:<textarea rows="5" ></textarea></label>
+<br><label>Phone no:<input type="text" id="phn"></label>
+<br><label>Email id:<input type="text" id="email"></label>
+<br><input type="Submit" value="Update">
+</form>
+</div>
+</body>
+</html>

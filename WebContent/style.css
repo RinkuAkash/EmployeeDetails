@@ -1,0 +1,63 @@
+.header h1{
+	position: relative;
+	text-align:center;
+	color: Dodgerblue;
+	top; 18px;
+}
+
+.header img{
+	float: left;
+	height: 80px;
+	background: #555;
+}
+.clearfix {
+	overflow: auto;
+}
+h1{
+	font-size: 35px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 16px 18px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: Dodgerblue;
+}
+.loginCenterDiv{
+	margin:28px;
+	border-radius:50%;
+	vertical-align:middle;
+	border:0;
+}
+.logo-img {
+	text-align: center;
+	border-radius: 50%;
+	vertical-align:middle;
+	border:0;
+}
+.login-form {
+	position: relative;
+	vertical-align:middle;
+	border-radius:50%;
+	border:0;
+	text-align:center;
+}
+.float{
+	float:right;
+}
