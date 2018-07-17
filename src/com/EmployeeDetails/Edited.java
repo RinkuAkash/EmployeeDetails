@@ -17,15 +17,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/Updated")
-public class Updated extends HttpServlet {
+@WebServlet("/Edited")
+public class Edited extends HttpServlet {
 
 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		res.setContentType("text/html");
 		ServletContext sc = getServletContext();
 
 		PrintWriter out = res.getWriter();
-
+		String id= req.getParameter("id");
 		String firstName = req.getParameter("firstName");
 		String designation = req.getParameter("designation");
 
@@ -42,7 +42,7 @@ public class Updated extends HttpServlet {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "");
 			ps = con.prepareStatement(
-					"INSERT INTO data(firstName,designation,dob,current,parmanent,phn,aphn,email) VALUES (?,?,?,?,?,?,?,?)");
+					"UPDATE data SET firstName=?,designation=?,dob=?,current=?,parmanent=?,phn=?,aphn=?,email=? WHERE id=?");
 			ps.setString(1, firstName);
 			ps.setString(2, designation);
 			ps.setDate(3, mySqlDate);
@@ -51,12 +51,18 @@ public class Updated extends HttpServlet {
 			ps.setString(6, phn);
 			ps.setString(7, aphn);
 			ps.setString(8, email);
-			ps.executeUpdate();
-			res.sendRedirect("updated.html");
+			ps.setString(9, id);
+			int count= ps.executeUpdate();
+			if(count>0) {
+			sc.getRequestDispatcher("/updated.html").include(req, res);
+			}
+			else {
+				throw new Exception();
+			}
 			ps.close();
 			con.close();
-
-		} catch (Exception e) {
+		}
+		catch (Exception e) {
 			res.sendRedirect("failed.html");
 			System.out.println(e);
 		}

@@ -13,7 +13,7 @@ public class New extends HttpServlet {
 		res.setContentType("text/html");
 		ServletContext sc= getServletContext();
 		HttpSession session = req.getSession(false);
-		if (session != null) {
+		if (session.getAttribute("login") != null) {
 			res.sendRedirect("newEmployee.html");
 		} else {
 			res.sendRedirect("login");

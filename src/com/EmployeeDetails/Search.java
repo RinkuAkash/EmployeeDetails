@@ -13,10 +13,10 @@ public class Search extends HttpServlet {
 		res.setContentType("text/html");
 		ServletContext sc= getServletContext();
 		HttpSession session = req.getSession(false);
-		if (session != null) {
-			sc.getRequestDispatcher("/search1.html").include(req, res);
-		} else {
+		if (session.getAttribute("login") != null) {
 			sc.getRequestDispatcher("/search.html").include(req, res);
+		} else {
+			res.sendRedirect("login.html");
 		}
 	}
 	public void destroy(){

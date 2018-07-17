@@ -6,6 +6,14 @@
 <title>Employee Details</title>
 <link rel="stylesheet" href="style.css">
 </head>
+<style type="text/css">
+textarea, select, input[type=text], input[type=month]{
+width:100%;
+height: 80%;
+font-size: 100%;
+border-radius: 10px;
+}
+</style>
 <body>
 <div class="clearfix">
 <div class="header">
@@ -20,13 +28,48 @@
 <li><a href="Search">Search</a></li>
 <li class="float"><a href="logout" >Logout</a></li>
 </ul>
-<br><label>Month and year: <input type="month" id="month"></label>
-<br><label>Basic Salary:<input type="text" id="Basic"></label>
-<br><label>DA<input type="text" id="DA"></label>
-<br><label>HRA:<input type="text" id="HRA"></label>
-<br><label>TA<input type="text" id="TA"></label>
-<br><label>PF:<input type="text" id="PF"></label>
-<br><label>Gross Total:<input type="text" id="gross"></label>
-<br><input type="Submit" value="Update">
+<div class="New-table">
+<table>
+<tr>
+<th>Month and year: </th>
+<th></th>
+<td> <input type="month" id="month"></td>
+</tr>
+<tr>
+<th><label>Basic Salary:</label></th>
+<th></th>
+<td><input type="text" id="Basic"></td>
+</tr>
+<tr>
+<th><label>DA</label></th>
+<th></th>
+<td><input type="text" id="DA"></td>
+</tr>
+<tr>
+<th><label>HRA:</label></th>
+<th></th>
+<td><input type="text" id="HRA"></td>
+</tr>
+<tr>
+<th><label>TA</label></th>
+<th></th>
+<td><input type="text" id="TA"></td>
+</tr>
+<tr>
+<th><label>PF:</label></th>
+<th></th>
+<td><input type="text" id="PF"></td>
+</tr>
+<tr>
+<th><label>Gross Total:</label></th>
+<th></th>
+<td><input type="text" id="gross"></td>
+</tr>
+<tr>
+<th></th>
+<th></th>
+<td style="text-align:center;"><input type="Submit" value="Update" style="background-color: DodgerBlue;font-size: 100%; width: 30%; height:100%; color: white;"></td>
+</table>
+</div>
 </body>
 </html>

@@ -2,13 +2,14 @@
 	position: relative;
 	text-align:center;
 	color: Dodgerblue;
-	top; 18px;
+	top; 6px;
 }
 
 .header img{
 	float: left;
-	height: 80px;
+	height: 100px;
 	background: #555;
+	margin: 10px;
 }
 .clearfix {
 	overflow: auto;
@@ -17,6 +18,7 @@ h1{
 	font-size: 35px;
 }
 ul {
+	border-radius:10px;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -58,6 +60,86 @@ li a:hover {
 	border:0;
 	text-align:center;
 }
+label{
+	font-size: 120%;
+}
+.login-input{
+	margin: 1px;
+	width: 15%;
+	height: 6%;
+}
+
+.New-table{
+	margin-top: 12px;
+	margin-left:auto;
+	margin-right: auto;
+	width:60%;
+	padding:8px;
+	border-collapse: collapse;
+}
+.New-table th{
+	border: 1px solid grey;
+}
+.New-table td{
+	border: 1px solid grey;
+}
+table{
+	width:80%;
+	height:240%;
+}
+th{
+	text-align: left;
+	padding:2%;
+}
+.New-form{
+	text-align: center;
+	border: 1px;
+	overflow: auto;
+}
+.login-botton{
+	border-radius: 10px;
+	font-size: 100%;
+	width: 8%;
+	height: 6%;
+	background-color: DodgerBlue;
+	color: white;
+}
 .float{
 	float:right;
+}
+.table {
+	margin-right: 4px;
+	margin-top: 10px;
+	margin-left: 4px;
+    border-collapse: separate;
+    border: 3px solid black;
+    -moz-border-radius:10px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+body{
+	font-family: TimesNewRoman;
+}
+
+.sel select{
+font-size: 120%;
+border-radius: 10px;
+width:12%;
+height: 30%;
+margin:3px;
+}
+
+.sel button{
+height: 30%;
+width: 100px;
+border-radius: 10px;
+font-size: 115%;
+background-color: Dodgerblue;
+color:White;
+}
+
+::placeholder{
+	color: grey;
+	word-spacing: 2px;
 }

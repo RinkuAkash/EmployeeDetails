@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
 </head>
+<style type="text/css">
+textarea, select, input[type=text], input[type=password]{
+font-size: 100%;
+border-radius: 10px;
+}
+</style>
 <body>
 	<div class="loginCenterDiv">
 		<div class="logo-img">
@@ -13,9 +19,9 @@
 		</div>
 		<div class="login-form">
 			<form method="POST" action="Validate">
-				<label>Username</label><br> <input type="text" id="uname" name="uname"><br>
-				<br> <label>Password</label><br> <input type="password"
-					id="password"><br> <input type="Submit" value="login">
+				<label class="login-label">Username <br><input type="text" id="uname" name="uname" class="login-input"></label><br>
+				<br> <label class="login-label">Password <br><input type="password" id="password" name="password" class="login-input"></label><br><br>
+					<input type="Submit" value="login" class="login-botton">
 			</form>
 		</div>
 	</div>

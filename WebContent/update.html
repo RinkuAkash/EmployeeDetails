@@ -6,6 +6,29 @@
 <title>Employee Details</title>
 <link rel="stylesheet" href="style.css">
 </head>
+<style type="text/css">
+select, input[type=text], input[type=Sumbit]{
+font-size: 120%;
+border-radius: 10px;
+width:12%;
+height: 30%;
+margin:3px;
+}
+button{
+height: 30%;
+width: 100px;
+border-radius: 10px;
+font-size: 115%;
+background-color: Dodgerblue;
+color:White;
+}
+
+</style>
+<script>
+function searchType(){
+	 document.getElementById('employeeForm').action = document.getElementById("type").value;
+}
+</script>
 <body>
 	<div class="clearfix">
 		<div class="header">
@@ -21,18 +44,17 @@
 		<li class="float"><a href="logout">Logout</a></li>
 	</ul>
 	<div>
-		<form method="POST" action="type">
-			<br>
-			<label>Designation:</label><select id="designation"><option
-					value="SoftwareEngineer">Software Engineer</option>
-				<option value="SeniorSE">Senior Software Engineer</option>
-				<option value="TeamLeader">Team Leader</option>
-				<option value="PersonalAssistant">Personal Assistant</option>
-				<option value="HR">HR/Operation Head</option></select> <label>Type:<select
-				id="type"><option value="Name">Name</option>
-					<option value="Salary">Salary</option></select></label> <input type="Submit"
-				value="Update">
-		</form>
+		<form method="POST" id="employeeForm" onSubmit="return searchType()"> 
+<br><label>Designation:</label>&nbsp<select id="designation" name="designation">
+								<option value="Software Engineer">Software Engineer</option>
+								<option value="Senior Software Engineer">Senior Software Engineer</option>
+								<option value="Team Leader">Team Leader</option>
+								<option value="Personal Assistant">Personal Assistant</option>
+								<option value="HR/Operation Head">HR/Operation Head</option>
+						</select>
+&nbsp<label>Type:</label>&nbsp<select id="type"><option value="utype">Details</option><option value="Stype">Salary</option></select>
+<button type="submit">UPDATE</button>
+</form>
 	</div>
 </body>
 </html>

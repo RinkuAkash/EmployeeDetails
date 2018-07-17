@@ -25,7 +25,6 @@ public class Validate extends HttpServlet {
 		String pass = req.getParameter("password");
 		Connection con = null;
 		PreparedStatement ps = null;
-		boolean status = false;
 		ServletContext sc= getServletContext();
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -37,14 +36,15 @@ public class Validate extends HttpServlet {
 			if (rs.next()) {
 			req.getSession().setAttribute("login", "true");
 			req.getSession().setAttribute("uname", un);
-			sc.getRequestDispatcher("/Index1.html").forward(req, res);
+			res.sendRedirect("index.jsp");
 			}
-			rs.close();
-			ps.close();
-			con.close();
+			else
+			{
+				throw new Exception();
+			}
 
 		} catch (Exception e) {
-			sc.getRequestDispatcher("/login.html").forward(req, res);
+			res.sendRedirect("login.html");
 			out.print("<p>Sorry, username or password error</p>");
 			System.out.println(e);
 		}

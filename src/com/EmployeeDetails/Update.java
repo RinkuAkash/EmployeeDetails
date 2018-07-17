@@ -11,12 +11,11 @@ public class Update extends HttpServlet {
 	}
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
 		res.setContentType("text/html");
-		ServletContext sc= getServletContext();
 		HttpSession session = req.getSession(false);
-		if (session != null) {
-			sc.getRequestDispatcher("/update.html").forward(req, res);
+		if (session.getAttribute("login") != null) {
+			res.sendRedirect("update.html");
 		} else {
-			sc.getRequestDispatcher("/login.html").forward(req, res);
+			res.sendRedirect("login");
 		}
 	}
 	public void destroy(){

@@ -16,10 +16,10 @@ public void doGet(HttpServletRequest req, HttpServletResponse res) throws Servle
 	if(session!=null) {
 		session.invalidate();
 		session=null;
-	}
 	res.setContentType("text/html");
 	ServletContext sc= getServletContext();
 	res.sendRedirect("Index");
+	}
 }
 public void destroy() {
 	

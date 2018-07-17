@@ -15,16 +15,7 @@ public class Index extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
 		res.setContentType("text/html");
 		ServletContext sc= getServletContext();
-		HttpSession session=req.getSession();
-		Object check =session.getAttribute("uname");
-		System.out.println(check);
-		if(check!=null) {
-		res.sendRedirect("Index1.html");
-		}
-		else
-		{
-			res.sendRedirect("Index.html");
-		}
+			res.sendRedirect("index.jsp");	
 	}
 	public void destroy() {
 		

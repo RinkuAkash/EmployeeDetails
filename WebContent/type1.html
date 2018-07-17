@@ -6,6 +6,23 @@
 <title>Employee Details</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
+<script type="text/javascript">
+	function address(f) {
+		if (f.checkBox.checked == true) {
+			document.getElementById('permanent').value = document
+					.getElementById('current').value;
+		}
+	}
+</script>
+<style type="text/css">
+textarea, select, input[type=text], input[type=Date]{
+width:100%;
+height: 80%;
+font-size: 100%;
+border-radius: 10px;
+}
+</style>
 <body>
 <div class="clearfix">
 <div class="header">
@@ -20,17 +37,73 @@
 <li><a href="Search">Search</a></li>
 <li class="float"><a href="logout" >Logout</a></li>
 </ul>
-<div>
-<form method="POST" action="Updated"> 
-<br><label>Employee Name:<input type="text" id="firstName" placeholder="First Name"><input type="text" id="lastName" placeholder="Last Name"></label>
-<br><label>Designation:</label><select id="designation"><option value="SoftwareEngineer">Software Engineer</option><option value="SeniorSE">Senior Software Engineer</option><option value="TeamLeader">Team Leader</option><option value="PersonalAssistant">Personal Assistant</option><option value="HR">HR/Operation Head</option></select>
-<br><label>Date of Birth<input type="date" id="dob"></label>
-<br><label>Current Address:<textarea rows="5"></textarea></label>
-<br><label>Permanent Address:<textarea rows="5" ></textarea></label>
-<br><label>Phone no:<input type="text" id="phn"></label>
-<br><label>Email id:<input type="text" id="email"></label>
-<br><input type="Submit" value="Update">
-</form>
-</div>
+
+<div class="New-form">
+		<form method="POST" action="Updated">
+			<br>
+			<div class="New-table">
+				<table>
+					<tr>
+						<th><label>Employee Name:</label></th>
+						<th></th>
+						<td><input type="text" id="firstName"
+							placeholder="First Name"></td>
+						<td><input type="text" id="lastName" placeholder="Last Name"></td>
+					</tr>
+					<tr>
+						<th><label>Designation: </label></th>
+						<th></th>
+						<td colspan=2><select id="designation">
+								<option value="SoftwareEngineer">Software Engineer</option>
+								<option value="SeniorSE">Senior Software Engineer</option>
+								<option value="TeamLeader">Team Leader</option>
+								<option value="PersonalAssistant">Personal Assistant</option>
+								<option value="HR">HR/Operation Head</option>
+						</select></td>
+					</tr>
+					<tr>
+						<th><label>Date of Birth:</label></th>
+						<th></th>
+						<td colspan=2><input type="date" id="dob"></td>
+					</tr>
+					<tr>
+						<th><label>Current Address:</label></th>
+						<th></th>
+						<td colspan=2><textarea rows="5" name="current" id="current"></textarea></td>
+					</tr>
+					<tr>
+						<td colspan=4><input type="checkbox" name="checkBox"
+							onClick="address(this.form)">Click here if current
+							address and permanent address is same</td>
+					</tr>
+					<tr>
+						<th><label>Permanent Address:</label></th>
+						<th></th>
+						<td colspan=2><textarea rows="5" name="permanent"
+								id="permanent"></textarea></td>
+					</tr>
+					<tr>
+						<th><label>Phone no:</label></th><th></th>
+						<td colspan=2><input type="text" id="phn"></td>
+					</tr>
+					<tr>
+						<th><label>Alternative Phone no:</label></th>
+						<th></th>
+						<td colspan=2><input type="text" id="aphn"></td>
+					</tr>
+					<tr>
+						<th><label>Email id:</label></th>
+						<th></th>
+						<td colspan=2><input type="text" id="email"></td>
+					</tr>
+					<tr>
+						<th></th>
+						<th></th>
+						<td colspan=2><input type="Submit" value="Update"
+							style="background-color: DodgerBlue;font-size: 100%; width: 30%; height:100%; color: white;"></td>
+				</table>
+			</div>
+		</form>
+	</div>
 </body>
 </html>
